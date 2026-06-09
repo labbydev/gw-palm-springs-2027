@@ -616,6 +616,14 @@ function buildMap() {
   const merge = filter.append('feMerge');
   merge.append('feMergeNode').attr('in', 'halo');
   merge.append('feMergeNode').attr('in', 'SourceGraphic');
+  /* Dark outline filter for Palm Springs label on the light background */
+  const filterDark = defs.append('filter').attr('id', 'lbl-halo-dark').attr('x', '-10%').attr('y', '-30%').attr('width', '120%').attr('height', '160%');
+  filterDark.append('feMorphology').attr('in', 'SourceAlpha').attr('operator', 'dilate').attr('radius', 2).attr('result', 'expanded');
+  filterDark.append('feFlood').attr('flood-color', 'rgba(28,16,24,0.75)').attr('result', 'color');
+  filterDark.append('feComposite').attr('in', 'color').attr('in2', 'expanded').attr('operator', 'in').attr('result', 'halo');
+  const mergeDark = filterDark.append('feMerge');
+  mergeDark.append('feMergeNode').attr('in', 'halo');
+  mergeDark.append('feMergeNode').attr('in', 'SourceGraphic');
 
   d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(us => {
     const path = d3.geoPath(proj);
@@ -654,7 +662,7 @@ function buildMap() {
         .attr('text-anchor', 'start').attr('fill', '#B8935A')
         .attr('font-family', "'Bodoni Moda', serif")
         .attr('font-size', Math.max(11, W * 0.026)).attr('font-style', 'italic')
-        .attr('filter', 'url(#lbl-halo)').text('Palm Springs');
+        .attr('filter', 'url(#lbl-halo-dark)').text('Palm Springs');
     }
   });
 }
