@@ -9,10 +9,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;height:100%;background:#0e0a0c;font-family:'Jost',sans-serif;overflow:hidden}
 
-/* ── STAGE ─────────────────────────────────────────── */
 #stage{width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;background:#0a080a}
 
-/* Deck shrinks to leave room for the nav bar */
 .deck{
   width:min(100vw, calc((100vh - 48px) * 16/9));
   height:min(calc(100vh - 48px), calc(100vw * 9/16));
@@ -20,41 +18,25 @@ html,body{width:100%;height:100%;background:#0e0a0c;font-family:'Jost',sans-seri
   font-size:clamp(11px,1.5vw,18px)
 }
 
-/* ── SLIDES ─────────────────────────────────────────── */
 .slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .55s ease}
 .slide.on{opacity:1;pointer-events:auto}
 
-/* ── PHOTO BACKGROUNDS ──────────────────────────────── */
-.photo{
-  position:absolute;inset:0;
-  background-size:cover;background-position:center;
-  transition:opacity .3s
-}
+.photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .3s}
 
-/* ── OVERLAYS ───────────────────────────────────────── */
 .ov-dark{position:absolute;inset:0;background:rgba(14,8,10,.58)}
 .ov-left{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,8,10,.96) 38%,rgba(14,8,10,.08) 100%)}
 .ov-bottom{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,8,10,.97) 0%,rgba(14,8,10,.25) 52%,rgba(14,8,10,.05) 100%)}
-.ov-right{position:absolute;inset:0;background:linear-gradient(270deg,rgba(14,8,10,.96) 38%,rgba(14,8,10,.08) 100%)}
 
-/* ── BODY LAYOUT ────────────────────────────────────── */
 .body{position:absolute;inset:0;display:flex;flex-direction:column}
 .inner{flex:1;display:flex;flex-direction:column;padding:2.5% 5%;min-height:0}
-.row{display:flex;flex-direction:row;flex:1}
 
-/* ── BANNER ─────────────────────────────────────────── */
-.ban{
-  flex-shrink:0;padding:.5em 2em;
-  display:flex;align-items:center;justify-content:center;gap:1em;
-  background:linear-gradient(90deg,transparent 0%,rgba(107,58,74,.5) 18%,rgba(107,58,74,.5) 82%,transparent 100%)
-}
+.ban{flex-shrink:0;padding:.5em 2em;display:flex;align-items:center;justify-content:center;gap:1em;background:linear-gradient(90deg,transparent 0%,rgba(107,58,74,.5) 18%,rgba(107,58,74,.5) 82%,transparent 100%)}
 .ban-lt{background:linear-gradient(90deg,transparent 0%,rgba(107,58,74,.13) 18%,rgba(107,58,74,.13) 82%,transparent 100%)}
 .ban span{font-size:.62em;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,232,220,.82);font-weight:300}
 .ban-lt span{color:rgba(107,58,74,.65)}
 .bdot{width:3px;height:3px;border-radius:50%;background:rgba(184,147,90,.55);flex-shrink:0}
 .bdot-lt{background:rgba(107,58,74,.3)}
 
-/* ── TYPOGRAPHY ─────────────────────────────────────── */
 .ey{font-size:.65em;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#B8935A;margin-bottom:.5em}
 .ey-dk{font-size:.65em;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#9A6040;margin-bottom:.5em}
 h1{font-family:'Bodoni Moda',serif;font-size:5.5em;font-weight:300;line-height:.92;color:#F2E8DC;letter-spacing:-.01em}
@@ -66,18 +48,15 @@ h2.dk em{color:#C8897A}
 h3{font-family:'Bodoni Moda',serif;font-size:1.1em;font-weight:400}
 .sub{font-size:.88em;color:#E8D5C0;letter-spacing:.12em;font-weight:300;margin-top:.75em}
 
-/* ── LINKS ──────────────────────────────────────────── */
 a{color:inherit;text-decoration:underline;text-decoration-color:rgba(184,147,90,.45);text-underline-offset:3px;transition:text-decoration-color .2s}
 a:hover{text-decoration-color:#B8935A}
 
-/* ── PILLS ──────────────────────────────────────────── */
 .pills{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1.4em}
 .pill{border:1px solid rgba(184,147,90,.4);color:#F2E8DC;font-size:.65em;padding:.4em 1em;border-radius:2px;letter-spacing:.12em;text-transform:uppercase;font-weight:300}
 
-/* ── CARDS ──────────────────────────────────────────── */
 .card{background:#fff;border-radius:8px;padding:1em 1.1em}
 .card h3{color:#1C1018;margin:.35em 0 .4em}
-.card p,.card li{font-size:.82em;line-height:1.6;font-weight:300;color:#5A4A42}
+.card p{font-size:.82em;line-height:1.6;font-weight:300;color:#5A4A42}
 .card .ab{height:2px;background:#C8897A;width:2em;margin-bottom:.55em}
 .card .ico{font-size:1.35em;margin-bottom:.3em}
 
@@ -91,23 +70,19 @@ a:hover{text-decoration-color:#B8935A}
 .cardc p{font-size:.82em;line-height:1.6;font-weight:300;color:#5A4A42}
 .cardc .ico{font-size:1em;margin-bottom:.25em}
 
-/* ── ITINERARY DAY COL ──────────────────────────────── */
 .dl{font-family:'Bodoni Moda',serif;font-size:1.2em;font-weight:400;color:#B8935A;padding-bottom:.35em;border-bottom:1px solid rgba(184,147,90,.28);margin-bottom:.5em}
 .ds{display:block;font-family:'Jost',sans-serif;font-size:.52em;color:#6B5E58;letter-spacing:.14em;text-transform:uppercase;margin-top:.15em}
 .di{font-size:.82em;font-weight:300;color:rgba(242,232,220,.78);padding:.45em .75em;border-left:2px solid rgba(184,147,90,.22);margin-bottom:.35em;line-height:1.4}
 .di.hi{border-left-color:#C8897A;color:#F2E8DC}
 .fn{font-size:.65em;font-style:italic;color:rgba(184,147,90,.7);text-align:center;letter-spacing:.06em;margin-top:.7em}
 
-/* ── HIKE TRAIL ROWS ────────────────────────────────── */
 .tr{display:flex;gap:.8em;align-items:flex-start;padding:.7em .9em;border-left:3px solid;border-radius:0 6px 6px 0;background:rgba(242,232,220,.05);margin-bottom:.55em}
 .trl{font-size:.76em;font-weight:500;min-width:5.5em;flex-shrink:0}
 .trd{font-size:.8em;font-weight:300;color:rgba(242,232,220,.7);line-height:1.5}
 
-/* ── STAT NUMBERS ───────────────────────────────────── */
 .stat-big{font-family:'Bodoni Moda',serif;font-size:2.8em;font-weight:300;color:#B8935A;line-height:1}
 .stat-lbl{font-size:.65em;color:rgba(242,232,220,.45);letter-spacing:.1em;text-transform:uppercase;margin-top:.2em}
 
-/* ── PERSON CARDS ───────────────────────────────────── */
 .pc{background:rgba(242,232,220,.07);border:1px solid rgba(242,232,220,.12);border-radius:8px;padding:.75em .9em}
 .ph{display:flex;align-items:center;gap:.55em;margin-bottom:.45em}
 .pdot{width:.5em;height:.5em;border-radius:50%;flex-shrink:0}
@@ -115,55 +90,40 @@ a:hover{text-decoration-color:#B8935A}
 .pi{font-size:.82em;color:rgba(242,232,220,.72);font-weight:300;padding-left:1.3em;position:relative;line-height:1.45;margin-bottom:.35em}
 .pi::before{content:'→';position:absolute;left:0;color:#B8935A;font-size:.9em}
 
-/* ── BUDGET ITEMS ───────────────────────────────────── */
-.ci{background:#fff;border-radius:8px;padding:.8em .95em}
-.ci-l{font-size:.63em;color:#9A8880;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.25em}
-.ci-v{font-family:'Bodoni Moda',serif;font-size:1.65em;color:#1C1018;font-weight:400;line-height:1}
-.ci-n{font-size:.62em;color:#9A8880;margin-top:.18em;font-style:italic}
-.tot{background:#6B3A4A;border-radius:8px;padding:.9em 1.1em;margin-top:.55em}
-.tv{font-family:'Bodoni Moda',serif;font-size:2.5em;color:#F2E8DC;font-weight:300;line-height:1}
-.fr{display:flex;justify-content:space-between;align-items:baseline;font-size:.78em;padding:.38em 0;border-bottom:1px solid #ede5dc}
-.fr:last-child{border-bottom:none}
-
-/* ── HOUSE ACTIVITY CARDS ───────────────────────────── */
 .act{background:#fff;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
 .act-hdr{padding:.7em 1.1em}
 .act-hdr span{font-size:.66em;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,232,220,.88)}
 .act-body{padding:1em 1.2em;flex:1;display:flex;flex-direction:column}
 .act-body h3{font-family:'Bodoni Moda',serif;font-size:1.5em;font-weight:400;color:#1C1018;margin-bottom:.65em}
-.blist{list-style:none;display:flex;flex-direction:column;gap:.55em;flex:1}
+.blist{list-style:none;display:flex;flex-direction:column;gap:.5em;flex:1}
 .blist li{font-size:.88em;font-weight:300;line-height:1.5;padding-left:1.2em;position:relative;color:#5A4A42}
 .blist li::before{content:'—';position:absolute;left:0;color:#B8935A}
-.act-note{font-size:.74em;font-style:italic;font-weight:300;margin-top:.75em;line-height:1.55}
+.act-note{font-size:.74em;font-style:italic;font-weight:300;margin-top:.65em;line-height:1.5}
 
-/* ── STEPS (close slide) ────────────────────────────── */
 .steps{display:flex;flex-direction:column;gap:.5em}
 .step{display:flex;align-items:center;gap:.8em;font-size:.9em;color:rgba(242,232,220,.85);font-weight:300}
 .sdot{width:.46em;height:.46em;border-radius:50%;background:#C8897A;flex-shrink:0}
 
-/* ── NAVIGATION ─────────────────────────────────────── */
+/* ── NAV — #nav > button scoped to prevent overriding .dot background ── */
 #nav{
   width:min(100vw, calc((100vh - 48px) * 16/9));
   height:48px;
   display:flex;align-items:center;justify-content:center;gap:1.2em;
   background:#090608;flex-shrink:0
 }
-#nav button{background:none;border:none;cursor:pointer;color:#B8935A;font-size:1rem;padding:.25rem .75rem;font-family:'Jost',sans-serif;transition:color .2s;letter-spacing:.05em}
-#nav button:hover{color:#F2E8DC}
+#nav > button{background:none;border:none;cursor:pointer;color:#B8935A;font-size:1rem;padding:.25rem .75rem;font-family:'Jost',sans-serif;transition:color .2s;letter-spacing:.05em}
+#nav > button:hover{color:#F2E8DC}
 .ctr{color:#6A5A62;font-size:.78rem;letter-spacing:.1em;min-width:64px;text-align:center}
 .dots{display:flex;gap:7px;align-items:center}
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(184,147,90,.6);cursor:pointer;transition:all .2s;border:none;flex-shrink:0}
-.dot.on{background:#F2E8DC;transform:scale(1.2)}
+.dot.on{background:#F2E8DC;transform:scale(1.25)}
 </style>
 </head>
 <body>
-
 <div id="stage">
 <div class="deck" id="deck">
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 1 · TITLE
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 1 · TITLE ══════ -->
 <div class="slide on">
   <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1800&q=85&auto=format')"></div>
   <div class="ov-left"></div>
@@ -178,16 +138,14 @@ a:hover{text-decoration-color:#B8935A}
         <span class="pill">Desert Hike</span>
         <span class="pill">Luxury Spa</span>
         <span class="pill">Fancy Dinner</span>
-        <span class="pill">Karaoke Night</span>
+        <span class="pill">Girls Night Out</span>
         <span class="pill">Dive-in Movie</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 2 · WHY PALM SPRINGS
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 2 · WHY PALM SPRINGS ══════ -->
 <div class="slide">
   <div class="body" style="background:#FAF6F1">
     <div class="ban ban-lt"><span style="color:rgba(107,58,74,.65)">The plan starts here</span><div class="bdot bdot-lt"></div><span style="color:rgba(107,58,74,.65)">Luxury, rest, and each other</span></div>
@@ -197,7 +155,7 @@ a:hover{text-decoration-color:#B8935A}
         <h2 class="dk" style="margin-bottom:.8em">Why Palm <em>Springs?</em></h2>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8em">
           <div class="card"><div class="ico">✈️</div><div class="ab"></div><h3>Equal travel for everyone</h3><p>Chicago, Austin, Columbus, Cleveland, Traverse City — all 1–2 connections to PSP. Nobody has home-turf advantage.</p></div>
-          <div class="card"><div class="ico">🏡</div><div class="ab"></div><h3>Private house = the event</h3><p>Pool, projector, Karaoke Night, big brunch, room for everyone. The VRBO is half the trip.</p></div>
+          <div class="card"><div class="ico">🏡</div><div class="ab"></div><h3>Private house = the event</h3><p>Pool, projector, Beer Olympics, big brunch, room for everyone. The VRBO is half the trip.</p></div>
           <div class="card"><div class="ico">🌡️</div><div class="ab"></div><h3>Hot, but we have a plan</h3><p>Hike early, pool at noon, cool evenings on the patio. We build the schedule around the heat.</p><p style="font-size:.78em;color:#9A6040;margin-top:.45em;font-weight:400">July avg: <strong>108°F</strong> days · <strong>79°F</strong> nights — dry heat, schedule built around it</p></div>
           <div class="card"><div class="ico">🎯</div><div class="ab"></div><h3>Something for everyone</h3><p>Adventure, spa, great food, pool games, full mocktail menu — built around this group.</p></div>
         </div>
@@ -210,9 +168,7 @@ a:hover{text-decoration-color:#B8935A}
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 3 · THE HIKE
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 3 · THE HIKE ══════ -->
 <div class="slide">
   <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1800&q=85&auto=format')"></div>
   <div class="ov-left"></div>
@@ -221,8 +177,8 @@ a:hover{text-decoration-color:#B8935A}
     <div class="ban"><span>The plan starts here</span><div class="bdot"></div><span>All fitness levels covered</span></div>
     <div class="inner" style="flex-direction:row;gap:6%">
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
-        <div class="ey">Friday Morning</div>
-        <h2 style="margin-bottom:.75em">Aerial Tramway<br><em>Hike</em></h2>
+        <div class="ey">Friday · Main Event</div>
+        <h2 style="margin-bottom:.75em"><a href="https://www.pstramway.com" target="_blank">Aerial Tramway<br><em>Hike</em></a></h2>
         <div style="display:flex;gap:2em;margin-bottom:1.1em">
           <div><div class="stat-big">8,516</div><div class="stat-lbl">ft summit</div></div>
           <div><div class="stat-big">30–40°</div><div class="stat-lbl">cooler at top</div></div>
@@ -232,26 +188,15 @@ a:hover{text-decoration-color:#B8935A}
       </div>
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
         <div class="ey" style="margin-bottom:.8em">Trail options for every level</div>
-        <div class="tr" style="border-left-color:#8FA68C">
-          <span class="trl" style="color:#8FA68C">Go hard</span>
-          <span class="trd">Long Valley Loop to Round Valley — ~5 miles, ~1,000 ft gain. Alpine forest, massive views, real workout for whoever wants it.</span>
-        </div>
-        <div class="tr" style="border-left-color:#B8935A">
-          <span class="trl" style="color:#B8935A">Easy &amp; scenic</span>
-          <span class="trd">Flat paved nature trail from Mountain Station — 1–2 miles, gorgeous scenery, completely comfortable on any body.</span>
-        </div>
-        <div class="tr" style="border-left-color:#C8897A">
-          <span class="trl" style="color:#C8897A">Just the vibe</span>
-          <span class="trd">Mountain Station hang — café, Lookout Lounge with cocktails &amp; mocktails, unreal mountain views. No trail required.</span>
-        </div>
+        <div class="tr" style="border-left-color:#8FA68C"><span class="trl" style="color:#8FA68C">Go hard</span><span class="trd">Long Valley Loop to Round Valley — ~5 miles, ~1,000 ft gain. Alpine forest, massive views, real workout for whoever wants it.</span></div>
+        <div class="tr" style="border-left-color:#B8935A"><span class="trl" style="color:#B8935A">Easy &amp; scenic</span><span class="trd">Flat paved nature trail from Mountain Station — 1–2 miles, gorgeous scenery, completely comfortable on any body.</span></div>
+        <div class="tr" style="border-left-color:#C8897A"><span class="trl" style="color:#C8897A">Just the vibe</span><span class="trd">Mountain Station hang — café, Lookout Lounge with cocktails &amp; mocktails, unreal mountain views. No trail required.</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 4 · THE SPA
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 4 · THE SPA ══════ -->
 <div class="slide">
   <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1800&q=85&auto=format')"></div>
   <div class="ov-left"></div>
@@ -259,101 +204,170 @@ a:hover{text-decoration-color:#B8935A}
     <div class="ban"><span>The plan starts here</span><div class="bdot"></div><span>You deserve this</span></div>
     <div class="inner" style="flex-direction:row;gap:6%">
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
-        <div class="ey">Saturday · The Main Event</div>
-        <div style="display:flex;align-items:flex-end;gap:.8em;margin:.45em 0 .3em">
-          <div style="font-family:'Bodoni Moda',serif;font-size:5em;font-weight:300;color:#B8935A;line-height:1">#2</div>
-          <div style="padding-bottom:.3em">
-            <p style="font-family:'Bodoni Moda',serif;font-size:1em;font-style:italic;color:#F2E8DC;font-weight:300;line-height:1.4">Best Day Spa<br>in the USA</p>
-            <p style="font-size:.62em;color:#6B5E58;margin-top:.2em;letter-spacing:.06em">USA Today 10Best, 2025</p>
+        <div class="ey">Saturday · Main Event</div>
+        <h2 style="font-size:2em;margin-bottom:.65em"><a href="https://www.aguacalientecasinos.com/spa-seche/" target="_blank">The Spa at <em>Séc-he</em></a></h2>
+        <!-- stat row with #2 factoid moved here -->
+        <div style="display:flex;gap:2em;margin-bottom:.85em;align-items:flex-start">
+          <div style="text-align:center">
+            <div style="font-family:'Bodoni Moda',serif;font-size:2.8em;font-weight:300;color:#B8935A;line-height:1">#2</div>
+            <div style="font-size:.6em;color:rgba(242,232,220,.45);letter-spacing:.08em;text-transform:uppercase;margin-top:.15em;line-height:1.3">Best Day Spa<br>in the USA</div>
+            <div style="font-size:.55em;color:#6B5E58;margin-top:.14em;font-style:italic">USA Today, 2025</div>
           </div>
+          <div><div class="stat-big">22</div><div class="stat-lbl">mineral baths</div></div>
+          <div><div class="stat-big">15</div><div class="stat-lbl">treatment rooms</div></div>
         </div>
-        <h2 style="font-size:2em;margin-bottom:.85em"><a href="https://www.aguacalientecasinos.com/spa-seche/" target="_blank">The Spa at <em>Séc-he</em></a></h2>
-        <div style="background:rgba(200,137,122,.13);border:1px solid rgba(200,137,122,.3);border-radius:8px;padding:.85em 1.1em">
-          <p style="font-size:.82em;color:#EDD5C8;font-style:italic;font-weight:300;line-height:1.6">The private group suite ($750) is the move — our own mineral whirlpool, fireplace lounge, wraparound patio with mountain views, big screen TV. Book 2–3 months in advance.</p>
+        <!-- emphasized suite callout -->
+        <div style="background:rgba(200,137,122,.18);border:1px solid rgba(200,137,122,.4);border-radius:8px;padding:.9em 1.1em">
+          <p style="font-size:.68em;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#C8897A;margin-bottom:.35em">The Private Group Suite — $750 total</p>
+          <p style="font-size:.86em;color:#F2E8DC;font-weight:300;line-height:1.65"><strong style="font-weight:500;color:#F2E8DC">Our own mineral whirlpool, fireplace lounge, wraparound patio with mountain views, and big screen TV.</strong></p>
+          <p style="font-size:.72em;color:rgba(242,232,220,.45);margin-top:.35em;font-style:italic">Book 2–3 months in advance</p>
         </div>
       </div>
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:.65em">
-        <div class="cardd"><div class="ico">♨️</div><h3>12,000-year-old mineral springs</h3><p>22 private mineral baths rooted in sacred Agua Caliente healing waters.</p></div>
-        <div class="cardd"><div class="ico">💆</div><h3>15 treatment rooms</h3><p>Massages, facials, gemstone-heated tables, salt caves. Everyone picks what they want.</p></div>
-        <div class="cardd"><div class="ico">🍹</div><h3>Cocktails, mocktails &amp; café</h3><p>Pál Bar poolside, Málmal Café, full juice menu. Everyone covered all day, always.</p></div>
+        <div class="cardd"><div class="ico">♨️</div><h3>12,000-year-old mineral springs</h3><p>Sacred Agua Caliente healing waters — the same source that's drawn people to this valley for centuries.</p></div>
+        <div class="cardd"><div class="ico">💆</div><h3>Every treatment you could want</h3><p>Massages, facials, gemstone-heated tables, salt caves. Everyone picks what they want.</p></div>
+        <div class="cardd"><div class="ico">🍹</div><h3>Cocktails, mocktails &amp; café all day</h3><p>Pál Bar poolside, Málmal Café, full juice menu. Everyone covered from arrival to last call.</p></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 5 · THE DINNER (Saturday — fancy, then karaoke)
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 5 · THE FANCY DINNER ══════ -->
 <div class="slide">
   <div class="body" style="background:#FAF6F1">
-    <div class="ban ban-lt"><span style="color:rgba(107,58,74,.65)">The plan starts here</span><div class="bdot bdot-lt"></div><span style="color:rgba(107,58,74,.65)">Open to other ideas too</span></div>
+    <div class="ban ban-lt"><span style="color:rgba(107,58,74,.65)">The plan starts here</span><div class="bdot bdot-lt"></div><span style="color:rgba(107,58,74,.65)">Dressed up, patio open, drinks flowing</span></div>
     <div class="inner" style="flex-direction:row;gap:0;padding:0">
       <!-- left photo panel -->
-      <div style="flex:32%;position:relative;overflow:hidden">
+      <div style="flex:30%;position:relative;overflow:hidden">
         <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=85&auto=format');background-position:center top"></div>
-        <div style="position:absolute;inset:0;background:rgba(107,58,74,.4)"></div>
+        <div style="position:absolute;inset:0;background:rgba(107,58,74,.35)"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(270deg,#FAF6F1 0%,transparent 28%)"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,8,10,.85) 0%,rgba(14,8,10,.3) 45%,transparent 70%)"></div>
         <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:7% 9% 8%">
-          <div class="ey" style="color:rgba(242,232,220,.55)">Saturday Night</div>
-          <p style="font-family:'Bodoni Moda',serif;font-size:1.9em;font-weight:300;color:#fff;line-height:1.1;margin:.3em 0 .2em"><a href="https://www.copleyspalmsprings.com/" target="_blank" style="color:#fff">Copley's on<br>Palm Canyon</a></p>
-          <p style="font-size:.74em;color:rgba(255,255,255,.65);font-style:italic;font-weight:300;line-height:1.5">Cary Grant's former estate<br>Mountain views · Fire pit patio</p>
+          <div class="ey" style="color:rgba(242,232,220,.7)">Saturday Night</div>
+          <p style="font-family:'Bodoni Moda',serif;font-size:1.85em;font-weight:300;color:#fff;line-height:1.1;margin:.3em 0 .2em"><a href="https://www.copleyspalmsprings.com/" target="_blank" style="color:#fff">Copley's on<br>Palm Canyon</a></p>
+          <p style="font-size:.72em;color:rgba(255,255,255,.7);font-style:italic;font-weight:300;line-height:1.5">Cary Grant's former estate<br>Mountain views · Fire pit patio</p>
         </div>
       </div>
       <!-- right content -->
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:3.5% 5% 5% 5%">
-        <div class="ey-dk">The Fancy Dinner</div>
-        <h2 class="dk" style="font-size:2em;margin-bottom:.8em">A night to <em>dress up</em></h2>
-        <div style="display:flex;flex-direction:column;gap:.7em">
-          <div class="cardc"><div class="ico">🏛️</div><h3>Historic Hollywood setting</h3><p>Housed in part of Cary Grant's estate. Alfresco patio, mountain views, fire pit. The story tells itself.</p></div>
-          <div class="cardc"><div class="ico">🍽️</div><h3>Something for everyone on the menu</h3><p>Award-winning contemporary American with clean simple options alongside elevated dishes. Nobody feels out of place.</p></div>
-          <div class="cardc"><div class="ico">🍹</div><h3>Full mocktail + cocktail menu</h3><p>Excellent non-alcoholic options throughout. Everyone has a proper drink all night.</p></div>
-          <div class="cardc"><div class="ico">⭐</div><h3>OpenTable's 100 Most Romantic, 2024</h3><p>Dressed up from dinner, straight to karaoke — the perfect Saturday night arc.</p></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:3.5% 4.5% 4.5% 4.5%">
+        <div class="ey-dk">The Fancy Dinner · A night to dress up</div>
+        <h2 class="dk" style="font-size:1.9em;margin-bottom:.75em">What we're <em>ordering</em></h2>
+        <div style="display:flex;flex-direction:column;gap:.6em">
+          <div style="background:#FAF6F1;border-radius:8px;padding:.75em 1em;display:flex;gap:.9em;align-items:flex-start">
+            <span style="font-size:1.1em;flex-shrink:0">🐟</span>
+            <div><p style="font-size:.8em;font-weight:500;color:#1C1018;margin-bottom:.18em">Trio of Hawaiian Ahi Tacos <span style="font-weight:300;color:#9A8880">$22</span></p><p style="font-size:.75em;color:#5A4A42;font-weight:300;line-height:1.5">Sesame shells, avocado, ginger soy, tobiko — a light showstopper starter.</p></div>
+          </div>
+          <div style="background:#FAF6F1;border-radius:8px;padding:.75em 1em;display:flex;gap:.9em;align-items:flex-start">
+            <span style="font-size:1.1em;flex-shrink:0">🦞</span>
+            <div><p style="font-size:.8em;font-weight:500;color:#1C1018;margin-bottom:.18em">Lobster Mac-N-Cheese <span style="font-weight:300;color:#9A8880">$25</span></p><p style="font-size:.75em;color:#5A4A42;font-weight:300;line-height:1.5">Poached lobster, smoked cheddar, herb breadcrumbs. Luxury comfort food.</p></div>
+          </div>
+          <div style="background:#FAF6F1;border-radius:8px;padding:.75em 1em;display:flex;gap:.9em;align-items:flex-start">
+            <span style="font-size:1.1em;flex-shrink:0">🥩</span>
+            <div><p style="font-size:.8em;font-weight:500;color:#1C1018;margin-bottom:.18em">Fresh East Coast Scallops <span style="font-weight:300;color:#9A8880">$48</span></p><p style="font-size:.75em;color:#5A4A42;font-weight:300;line-height:1.5">Pan-seared over basmati rice with red Thai curry — rich with a bright aromatic finish.</p></div>
+          </div>
+          <div style="background:#FAF6F1;border-radius:8px;padding:.75em 1em;display:flex;gap:.9em;align-items:flex-start">
+            <span style="font-size:1.1em;flex-shrink:0">🌸</span>
+            <div><p style="font-size:.8em;font-weight:500;color:#1C1018;margin-bottom:.18em">Lavender Pound Cake <span style="font-weight:300;color:#9A8880">$17</span></p><p style="font-size:.75em;color:#5A4A42;font-weight:300;line-height:1.5">Signature dessert of the estate — house-made lavender cake with basil ice cream.</p></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 6 · HOUSE ACTIVITIES
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 6 · GIRLS NIGHT OUT ══════ -->
+<div class="slide">
+  <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1800&q=85&auto=format')"></div>
+  <div class="ov-dark"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,8,10,.95) 42%,rgba(14,8,10,.2) 100%)"></div>
+  <div class="body">
+    <div class="ban"><span>The plan starts here</span><div class="bdot"></div><span>After Copley's · Saturday Night</span></div>
+    <div class="inner" style="flex-direction:row;gap:6%">
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+        <div class="ey">Saturday · After Dinner</div>
+        <h2 style="margin-bottom:.7em">Girls Night <em>Out</em></h2>
+        <h2 style="font-size:1.5em;margin-bottom:.9em;opacity:.7">Karaoke at <a href="https://www.hunterspalmsprings.com" target="_blank" style="color:#C8897A">Hunters<br>Palm Springs</a></h2>
+        <div style="display:flex;flex-direction:column;gap:.5em">
+          <div style="display:flex;gap:.7em;align-items:flex-start">
+            <span style="font-size:.75em;color:#B8935A;flex-shrink:0;margin-top:.1em">📍</span>
+            <p style="font-size:.82em;color:rgba(242,232,220,.7);font-weight:300">302 E Arenas Rd, Palm Springs — heart of the Arenas entertainment district</p>
+          </div>
+          <div style="display:flex;gap:.7em;align-items:flex-start">
+            <span style="font-size:.75em;color:#B8935A;flex-shrink:0;margin-top:.1em">💵</span>
+            <p style="font-size:.82em;color:rgba(242,232,220,.7);font-weight:300">Low cover or free entry · drinks are the main spend · call ahead to reserve group seating</p>
+          </div>
+          <div style="display:flex;gap:.7em;align-items:flex-start">
+            <span style="font-size:.75em;color:#B8935A;flex-shrink:0;margin-top:.1em">📞</span>
+            <p style="font-size:.82em;color:rgba(242,232,220,.7);font-weight:300">(760) 323-0700 · ask about private section or group buyout for Saturday night</p>
+          </div>
+        </div>
+        <div style="background:rgba(200,137,122,.13);border:1px solid rgba(200,137,122,.3);border-radius:8px;padding:.8em 1em;margin-top:.9em">
+          <p style="font-size:.78em;color:#EDD5C8;font-weight:300;font-style:italic;line-height:1.6">Dressed up from Copley's and heading straight to karaoke — that's the Saturday night arc. Someone will absolutely attempt a Celine Dion power ballad.</p>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:.65em">
+        <div class="cardd"><div class="ico">🎤</div><h3>Your playlist, your rules</h3><p>Guilty-pleasure pop, 2000s throwbacks, and power ballads. No strangers voting on your song choices.</p></div>
+        <div class="cardd"><div class="ico">🍹</div><h3>Full bar all night</h3><p>Cocktails and mocktails flowing. Everyone dressed up and ready after the best spa day of the year.</p></div>
+        <div class="cardd"><div class="ico">✨</div><h3>The perfect Saturday arc</h3><p>Spa → brunch → get dressed up together → fancy dinner → karaoke. That's a full day of yes.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ SLIDE 7 · HOUSE ACTIVITIES ══════ -->
 <div class="slide">
   <div class="body" style="background:#FAF6F1">
     <div class="ban ban-lt"><span style="color:rgba(107,58,74,.65)">The plan starts here</span></div>
     <div class="inner">
       <div class="ey-dk">Because we have a private house</div>
       <h2 class="dk" style="margin-bottom:.75em">House Activities</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.1em;flex:1;min-height:0">
-        <div class="act">
-          <div class="act-hdr" style="background:linear-gradient(135deg,#1a0e22,#2e1545,#120a1a)">
-            <span>Saturday Night — After Dinner</span>
-          </div>
-          <div class="act-body">
-            <h3>Karaoke Night</h3>
-            <ul class="blist">
-              <li>Private room rental — just your group, no strangers</li>
-              <li>Your own setlist: guilty-pleasure pop, 2000s throwbacks, power ballads</li>
-              <li>Food and cocktails served in the room all night</li>
-              <li>Post-spa, post-dinner energy — rowdy enough to be memorable</li>
-              <li>Someone will absolutely attempt a Celine Dion power ballad</li>
-            </ul>
-            <p class="act-note" style="color:#C8897A">Cap off the evening at a private karaoke room in downtown Palm Springs — your group takes over and sings until last call.</p>
-          </div>
-        </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1em;flex:1;min-height:0">
         <div class="act">
           <div class="act-hdr" style="background:linear-gradient(135deg,#1a1020,#2a1830,#140e1a)">
             <span>Thursday Night</span>
           </div>
           <div class="act-body">
             <h3>Dive-in Movie Night</h3>
-            <p style="font-size:.78em;color:#9A8880;font-style:italic;font-weight:300;margin-bottom:.75em">Lauren's bringing the projector.</p>
+            <p style="font-size:.76em;color:#9A8880;font-style:italic;font-weight:300;margin-bottom:.6em">Lauren's bringing the projector.</p>
             <ul class="blist">
-              <li><strong style="font-weight:500;color:#3a2a20">Legally Blonde</strong> — sorority girls in their 30s, hello</li>
+              <li><strong style="font-weight:500;color:#3a2a20">Legally Blonde</strong> — sorority girls in their 30s</li>
               <li><strong style="font-weight:500;color:#3a2a20">Mamma Mia!</strong> — everyone sings, everyone swims</li>
               <li><strong style="font-weight:500;color:#3a2a20">Bridesmaids</strong> — quotable all weekend</li>
               <li><strong style="font-weight:500;color:#3a2a20">Clueless</strong> — California iconic</li>
             </ul>
-            <p class="act-note" style="color:#9A8880">Start after 9pm. Floaties + towels poolside. Hike is at 6:30am — keep drinks light!</p>
+            <p class="act-note" style="color:#9A8880">Floaties + towels poolside. Hike is at 6:30am — keep drinks light!</p>
+          </div>
+        </div>
+        <div class="act">
+          <div class="act-hdr" style="background:linear-gradient(135deg,#1C2810,#2d4020,#182010)">
+            <span>All Weekend Long</span>
+          </div>
+          <div class="act-body">
+            <h3>Pool &amp; Backyard</h3>
+            <ul class="blist">
+              <li>Beer Olympics — flip cup, water pong, inner tube races</li>
+              <li>Best Dive Contest (judged)</li>
+              <li>Cornhole + lawn games on the patio</li>
+              <li>Pool float hours — no agenda, full sun</li>
+              <li>Morning book time with coffee on the patio</li>
+            </ul>
+            <p class="act-note" style="color:#C8897A">Mocktails + seltzers stocked all weekend. Everyone competes, everyone wins something.</p>
+          </div>
+        </div>
+        <div class="act">
+          <div class="act-hdr" style="background:linear-gradient(135deg,#1a100c,#2a1810,#140c08)">
+            <span>Saturday Morning</span>
+          </div>
+          <div class="act-body">
+            <h3>Big House Brunch</h3>
+            <ul class="blist">
+              <li>Full spread cooked together — eggs, fruit, pastries</li>
+              <li>Mimosas &amp; mocktails, obviously</li>
+              <li>Slow morning before the spa — no rushing</li>
+              <li>Get-ready-together time built in after</li>
+            </ul>
+            <p class="act-note" style="color:#9A8880">Easing into the most indulgent day of the trip. No alarm clocks, no itinerary until we're ready.</p>
           </div>
         </div>
       </div>
@@ -361,9 +375,7 @@ a:hover{text-decoration-color:#B8935A}
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 7 · THE ITINERARY (recap)
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 8 · THE ITINERARY ══════ -->
 <div class="slide">
   <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1800&q=85&auto=format')"></div>
   <div class="ov-dark"></div>
@@ -387,7 +399,7 @@ a:hover{text-decoration-color:#B8935A}
           <div class="di">6:30am grab-and-go breakfast</div>
           <div class="di hi">🥾 <a href="https://www.pstramway.com" target="_blank">Aerial Tramway</a> hike</div>
           <div class="di hi">😴 Mandatory nap time</div>
-          <div class="di">Get ready together</div>
+          <div class="di">Pool hang + unwind</div>
           <div class="di hi">🌿 Dinner: <a href="https://www.thebirbaps.com" target="_blank">Birba</a> Italian patio</div>
           <div class="di">Nightcap — rooftop bar or home</div>
         </div>
@@ -397,7 +409,7 @@ a:hover{text-decoration-color:#B8935A}
           <div class="di hi">💆 Full day: <a href="https://www.aguacalientecasinos.com/spa-seche/" target="_blank">Spa at Séc-he</a></div>
           <div class="di">Get dressed up together</div>
           <div class="di hi">⭐ Dinner: <a href="https://www.copleyspalmsprings.com/" target="_blank">Copley's</a></div>
-          <div class="di hi">🎤 Karaoke Night — after dinner</div>
+          <div class="di hi">🎤 <a href="https://www.hunterspalmsprings.com" target="_blank">Hunters</a> — Girls Night Out</div>
         </div>
         <div style="background:rgba(14,8,10,.42);border-radius:8px;padding:.65em .75em;overflow:hidden">
           <div class="dl">Sunday<span class="ds">Farewell</span></div>
@@ -412,9 +424,7 @@ a:hover{text-decoration-color:#B8935A}
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 8 · BUILT FOR THIS GROUP
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 9 · BUILT FOR THIS GROUP ══════ -->
 <div class="slide">
   <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1529333241412-de6b7d68d0fb?w=1800&q=85&auto=format')"></div>
   <div class="ov-dark"></div>
@@ -429,14 +439,12 @@ a:hover{text-decoration-color:#B8935A}
           <div class="pi">Her own real bed — no shared situations</div>
           <div class="pi">Easy flat Tramway trail — full adventure, no back strain</div>
           <div class="pi">Back-specialist massage at Séc-he, noted at booking</div>
-          <div class="pi">Emcee + chief heckler at Karaoke Night</div>
         </div>
         <div class="pc">
           <div class="ph"><div class="pdot" style="background:#8FA68C"></div><div class="pn">Spitzy</div></div>
           <div class="pi">Long Valley Loop — real mileage, real elevation</div>
           <div class="pi">Equal travel distance from home</div>
           <div class="pi">Full mocktail menu throughout the whole trip</div>
-          <div class="pi">First one up at Karaoke — competitive energy = her thing</div>
         </div>
         <div class="pc">
           <div class="ph"><div class="pdot" style="background:#B8935A"></div><div class="pn">Little</div></div>
@@ -450,12 +458,12 @@ a:hover{text-decoration-color:#B8935A}
           <div class="pi"><a href="https://www.copleyspalmsprings.com/" target="_blank">Copley's</a> has clean, simple grilled options — no stress</div>
           <div class="pi">Pool time = zero pressure, total relaxation</div>
           <div class="pi">No boys. Full stop.</div>
-          <div class="pi">Karaoke Night is her villain era</div>
+          <div class="pi">Girls Night Out is her villain era</div>
         </div>
         <div class="pc">
           <div class="ph"><div class="pdot" style="background:#6B3A4A"></div><div class="pn">Caitlin</div></div>
           <div class="pi">Full spa day at the #2 spa in the USA</div>
-          <div class="pi">Karaoke Night competitive energy, obviously</div>
+          <div class="pi">Girls Night Out energy = obviously</div>
           <div class="pi">Quality friend time built into every single activity</div>
           <div class="pi">Getting ready together is its own event</div>
         </div>
@@ -471,60 +479,41 @@ a:hover{text-decoration-color:#B8935A}
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 9 · BUDGET
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 10 · BUDGET ══════ -->
 <div class="slide">
   <div class="body" style="background:linear-gradient(160deg,#FAF6F1,#f0e6d8)">
     <div class="ban ban-lt"><span style="color:rgba(107,58,74,.65)">The plan starts here</span><div class="bdot bdot-lt"></div><span style="color:rgba(107,58,74,.65)">All estimates — flexible</span></div>
-    <div class="inner">
+    <div class="inner" style="min-height:0">
       <div class="ey-dk">The Numbers</div>
-      <h2 class="dk" style="margin-bottom:.7em">Budget + <em>Logistics</em></h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.1em;flex:1;min-height:0;align-items:start">
+      <h2 class="dk" style="font-size:2.1em;margin-bottom:.7em">Budget + <em>Logistics</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2em;flex:1;min-height:0;align-items:start">
 
-        <!-- col 1: cost breakdown -->
+        <!-- LEFT: Book yourself -->
         <div style="display:flex;flex-direction:column;gap:.5em">
-          <p style="font-family:'Bodoni Moda',serif;font-size:1.1em;color:#1C1018;margin-bottom:.2em">Per person costs</p>
-          <div class="ci"><div class="ci-l">Flights RT</div><div class="ci-v">$300–550</div><div class="ci-n">Book 3–4 months out</div></div>
-          <div class="ci"><div class="ci-l">VRBO ÷ 7 people</div><div class="ci-v">$250–430</div><div class="ci-n">Private pool home</div></div>
-          <div class="ci"><div class="ci-l">Spa day</div><div class="ci-v">$200–400</div><div class="ci-n">Treatments + tip</div></div>
-          <div class="ci"><div class="ci-l">Fancy dinner</div><div class="ci-v">$100–150</div><div class="ci-n">Copley's per person</div></div>
-          <div class="ci"><div class="ci-l">Hike (tramway)</div><div class="ci-v">$37–50</div><div class="ci-n">Tram ticket</div></div>
-          <div class="ci"><div class="ci-l">Food + drinks</div><div class="ci-v">$150–200</div><div class="ci-n">Meals + grocery</div></div>
-          <div class="tot">
+          <p style="font-size:.62em;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#9A6040;margin-bottom:.1em">Book yourself</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5em">
+            <div style="background:#fff;border-radius:8px;padding:.75em .9em"><div style="font-size:.62em;color:#9A8880;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.2em">Flights RT</div><div style="font-family:'Bodoni Moda',serif;font-size:1.55em;color:#1C1018;line-height:1">$300–550</div><div style="font-size:.6em;color:#9A8880;margin-top:.15em;font-style:italic">Book 3–4 months out</div></div>
+            <div style="background:#fff;border-radius:8px;padding:.75em .9em"><div style="font-size:.62em;color:#9A8880;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.2em">Spa at Séc-he</div><div style="font-family:'Bodoni Moda',serif;font-size:1.55em;color:#1C1018;line-height:1">$200–400</div><div style="font-size:.6em;color:#9A8880;margin-top:.15em;font-style:italic">Treatments + tip</div></div>
+            <div style="background:#fff;border-radius:8px;padding:.75em .9em"><div style="font-size:.62em;color:#9A8880;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.2em">Tramway ticket</div><div style="font-family:'Bodoni Moda',serif;font-size:1.55em;color:#1C1018;line-height:1">$37–50</div><div style="font-size:.6em;color:#9A8880;margin-top:.15em;font-style:italic">Book online</div></div>
+            <div style="background:#fff;border-radius:8px;padding:.75em .9em"><div style="font-size:.62em;color:#9A8880;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.2em">Meals + drinks</div><div style="font-family:'Bodoni Moda',serif;font-size:1.55em;color:#1C1018;line-height:1">$150–200</div><div style="font-size:.6em;color:#9A8880;margin-top:.15em;font-style:italic">Dinners + groceries</div></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: We book together + total -->
+        <div style="display:flex;flex-direction:column;gap:.5em">
+          <p style="font-size:.62em;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#9A6040;margin-bottom:.1em">We book together (your share)</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5em">
+            <div style="background:#fff;border-radius:8px;padding:.75em .9em"><div style="font-size:.62em;color:#9A8880;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.2em">VRBO ÷ 7</div><div style="font-family:'Bodoni Moda',serif;font-size:1.55em;color:#1C1018;line-height:1">$250–430</div><div style="font-size:.6em;color:#9A8880;margin-top:.15em;font-style:italic">Private pool home</div></div>
+            <div style="background:#fff;border-radius:8px;padding:.75em .9em"><div style="font-size:.62em;color:#9A8880;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.2em">Rental car ÷ 7</div><div style="font-family:'Bodoni Moda',serif;font-size:1.55em;color:#1C1018;line-height:1">$50–80</div><div style="font-size:.6em;color:#9A8880;margin-top:.15em;font-style:italic">Split the whole trip</div></div>
+          </div>
+          <div style="background:#fff;border-radius:8px;padding:.8em 1em">
+            <p style="font-size:.75em;color:#5A4A42;font-weight:300;line-height:1.6">Splitwise for shared costs. Lauren coordinates the VRBO once dates are locked. Spa group suite ($750 total) split on-site.</p>
+          </div>
+          <!-- total -->
+          <div style="background:#6B3A4A;border-radius:8px;padding:.9em 1.1em;margin-top:.1em">
             <div style="font-size:.62em;color:rgba(242,232,220,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.25em">Total per person, all-in</div>
-            <div class="tv">$1,050–1,800</div>
-            <div style="font-size:.64em;color:rgba(242,232,220,.45);margin-top:.25em;font-style:italic">Spa and flights move the ceiling</div>
-          </div>
-        </div>
-
-        <!-- col 2: flights by city -->
-        <div style="display:flex;flex-direction:column;gap:.5em">
-          <div style="background:#fff;border-radius:8px;padding:1em 1.1em">
-            <p style="font-family:'Bodoni Moda',serif;font-size:1.1em;color:#1C1018;margin-bottom:.6em">Flights by city</p>
-            <div class="fr"><span style="font-weight:500;color:#1C1018">Chicago (ORD/MDW)</span><span style="color:#9A8880;font-weight:300">$300–450 · direct</span></div>
-            <div class="fr"><span style="font-weight:500;color:#1C1018">Austin (AUS)</span><span style="color:#9A8880;font-weight:300">$280–420 · direct or 1 stop</span></div>
-            <div class="fr"><span style="font-weight:500;color:#1C1018">Columbus / Cleveland</span><span style="color:#9A8880;font-weight:300">$320–500 · 1 stop</span></div>
-            <div class="fr"><span style="font-weight:500;color:#1C1018">Traverse City (TVC)</span><span style="color:#9A8880;font-weight:300">$400–600 · drive to ORD</span></div>
-          </div>
-          <div style="background:#FDF5EE;border-left:3px solid #C8897A;padding:.8em 1em;border-radius:0 8px 8px 0">
-            <p style="font-size:.78em;color:#9A8880;font-style:italic;font-weight:300;line-height:1.55">Rental car split between the group. Splitwise for shared costs. Everyone books their own flights.</p>
-          </div>
-        </div>
-
-        <!-- col 3: booking timeline -->
-        <div style="display:flex;flex-direction:column;gap:.5em">
-          <div style="background:#fff;border-radius:8px;padding:1em 1.1em">
-            <p style="font-family:'Bodoni Moda',serif;font-size:1.1em;color:#1C1018;margin-bottom:.6em">Booking timeline</p>
-            <div class="fr"><span style="font-weight:500;color:#1C1018"><a href="https://www.aguacalientecasinos.com/spa-seche/" target="_blank">Spa at Séc-he</a></span><span style="color:#9A8880;font-weight:300">ASAP — 2+ months out</span></div>
-            <div class="fr"><span style="font-weight:500;color:#1C1018"><a href="https://www.copleyspalmsprings.com/" target="_blank">Copley's</a></span><span style="color:#9A8880;font-weight:300">8 weeks out, call directly</span></div>
-            <div class="fr"><span style="font-weight:500;color:#1C1018">VRBO</span><span style="color:#9A8880;font-weight:300">Once dates confirmed</span></div>
-            <div class="fr"><span style="font-weight:500;color:#1C1018">Flights</span><span style="color:#9A8880;font-weight:300">3–4 months out</span></div>
-            <div class="fr"><span style="font-weight:500;color:#1C1018"><a href="https://www.pstramway.com" target="_blank">Aerial Tramway</a></span><span style="color:#9A8880;font-weight:300">Book online in advance</span></div>
-          </div>
-          <div style="background:#6B3A4A;border-radius:8px;padding:.9em 1.1em">
-            <p style="font-family:'Bodoni Moda',serif;font-size:1.05em;color:#F2E8DC;margin-bottom:.45em">The real tip</p>
-            <p style="font-size:.78em;color:rgba(242,232,220,.7);font-weight:300;line-height:1.55">Book the spa and Copley's the moment dates are confirmed — those are the two that sell out. Everything else is flexible.</p>
+            <div style="font-family:'Bodoni Moda',serif;font-size:2.4em;color:#F2E8DC;font-weight:300;line-height:1">$1,050–1,800</div>
+            <div style="font-size:.63em;color:rgba(242,232,220,.45);margin-top:.25em;font-style:italic">Spa and flights move the ceiling — the floor is very achievable</div>
           </div>
         </div>
 
@@ -533,20 +522,18 @@ a:hover{text-decoration-color:#B8935A}
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
-     SLIDE 10 · CLOSE
-══════════════════════════════════════════════════ -->
+<!-- ══════ SLIDE 11 · CLOSE ══════ -->
 <div class="slide">
   <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1800&q=85&auto=format')"></div>
   <div class="ov-bottom"></div>
   <div class="body">
     <div class="ban"><span>The plan starts here</span><div class="bdot"></div><span>Summer 2027</span></div>
     <div class="inner" style="justify-content:flex-end;padding-bottom:6%">
-      <div style="background:rgba(14,8,10,.62);border-radius:12px;padding:1.4em 1.8em;display:inline-flex;flex-direction:column;align-self:flex-start">
+      <div style="background:rgba(14,8,10,.65);border-radius:12px;padding:1.4em 1.8em;display:inline-flex;flex-direction:column;align-self:flex-start">
         <div class="ey">Are we doing this?</div>
         <h1>Palm Springs<br>is <em>calling.</em></h1>
-        <div style="margin-top:1.3em">
-          <div class="ey" style="margin-bottom:.75em">Next steps — if we're in</div>
+        <div style="margin-top:1.2em">
+          <div class="ey" style="margin-bottom:.7em">Next steps — if we're in</div>
           <div class="steps">
             <div class="step"><div class="sdot"></div>Vote on dates (Thu–Sun, summer 2027)</div>
             <div class="step"><div class="sdot"></div>Confirm headcount — aiming for 7–8</div>
@@ -561,22 +548,17 @@ a:hover{text-decoration-color:#B8935A}
 </div>
 
 </div><!-- /deck -->
-
-<!-- ── NAV ── -->
 <div id="nav">
   <button onclick="go(-1)">&#8592;</button>
   <div class="dots" id="dots"></div>
-  <span class="ctr" id="ctr">1 / 10</span>
+  <span class="ctr" id="ctr"></span>
   <button onclick="go(1)">&#8594;</button>
 </div>
 </div><!-- /stage -->
 
-<!-- D3 + TopoJSON for flight map -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
-
 <script>
-/* ── SLIDE NAVIGATION ── */
 const slides = document.querySelectorAll('.slide');
 const total = slides.length;
 let cur = 0;
@@ -610,13 +592,11 @@ document.addEventListener('touchend', e => {
   if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
 });
 
-/* ── FLIGHT MAP ── */
 function buildMap() {
   const el = document.getElementById('flightmap');
   if (!el) return;
   const W = el.clientWidth || 480;
   const H = el.clientHeight || 300;
-
   const cities = [
     { name: 'Palm Springs', lat: 33.83, lon: -116.54, dest: true },
     { name: 'Chicago',      lat: 41.88, lon:  -87.63 },
@@ -625,17 +605,13 @@ function buildMap() {
     { name: 'Cleveland',    lat: 41.50, lon:  -81.69 },
     { name: 'Traverse City',lat: 44.76, lon:  -85.62 },
   ];
-
   const proj = d3.geoAlbersUsa().scale(W * 1.18).translate([W * 0.5, H * 0.52]);
-
-  const svg = d3.select(el).append('svg')
-    .attr('width', W).attr('height', H)
-    .style('background', 'transparent');
+  const svg = d3.select(el).append('svg').attr('width', W).attr('height', H).style('background', 'transparent');
 
   const defs = svg.append('defs');
   const filter = defs.append('filter').attr('id', 'lbl-halo').attr('x', '-10%').attr('y', '-30%').attr('width', '120%').attr('height', '160%');
   filter.append('feMorphology').attr('in', 'SourceAlpha').attr('operator', 'dilate').attr('radius', 2).attr('result', 'expanded');
-  filter.append('feFlood').attr('flood-color', 'rgba(250,246,241,0.88)').attr('result', 'color');
+  filter.append('feFlood').attr('flood-color', 'rgba(250,246,241,0.9)').attr('result', 'color');
   filter.append('feComposite').attr('in', 'color').attr('in2', 'expanded').attr('operator', 'in').attr('result', 'halo');
   const merge = filter.append('feMerge');
   merge.append('feMergeNode').attr('in', 'halo');
@@ -643,72 +619,45 @@ function buildMap() {
 
   d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json').then(us => {
     const path = d3.geoPath(proj);
-
-    svg.append('g')
-      .selectAll('path')
+    svg.append('g').selectAll('path')
       .data(topojson.feature(us, us.objects.states).features)
-      .join('path')
-        .attr('d', path)
-        .attr('fill', '#2a1e24')
-        .attr('stroke', '#4a3540')
-        .attr('stroke-width', .5);
+      .join('path').attr('d', path).attr('fill', '#2a1e24').attr('stroke', '#4a3540').attr('stroke-width', .5);
 
     const ps = proj([cities[0].lon, cities[0].lat]);
 
     cities.slice(1).forEach(city => {
       const pt = proj([city.lon, city.lat]);
       if (!pt || !ps) return;
-
       const mx = (pt[0] + ps[0]) / 2;
       const my = (pt[1] + ps[1]) / 2 - Math.hypot(ps[0]-pt[0], ps[1]-pt[1]) * 0.22;
+      svg.append('path').attr('d', `M${pt[0]},${pt[1]} Q${mx},${my} ${ps[0]},${ps[1]}`)
+        .attr('fill', 'none').attr('stroke', '#C8897A').attr('stroke-width', 1.4).attr('stroke-dasharray', '4 3').attr('opacity', .75);
+      svg.append('circle').attr('cx', pt[0]).attr('cy', pt[1]).attr('r', 4.5).attr('fill', '#C8897A').attr('opacity', .9);
 
-      svg.append('path')
-        .attr('d', `M${pt[0]},${pt[1]} Q${mx},${my} ${ps[0]},${ps[1]}`)
-        .attr('fill', 'none')
-        .attr('stroke', '#C8897A')
-        .attr('stroke-width', 1.4)
-        .attr('stroke-dasharray', '4 3')
-        .attr('opacity', .75);
-
-      svg.append('circle')
-        .attr('cx', pt[0]).attr('cy', pt[1]).attr('r', 4.5)
-        .attr('fill', '#C8897A').attr('opacity', .9);
-
-      const right = pt[0] > W / 2;
+      /* All eastern cities anchor label to the RIGHT of their dot */
+      const anchorRight = city.lon > -100;
       svg.append('text')
-        .attr('x', pt[0] + (right ? -8 : 8))
-        .attr('y', pt[1] - 7)
-        .attr('text-anchor', right ? 'end' : 'start')
-        .attr('fill', '#2a1020')
-        .attr('font-family', "'Jost', sans-serif")
-        .attr('font-size', Math.max(10, W * 0.022))
-        .attr('font-weight', '500')
-        .attr('filter', 'url(#lbl-halo)')
-        .text(city.name);
+        .attr('x', pt[0] + (anchorRight ? 8 : -8))
+        .attr('y', pt[1] - 6)
+        .attr('text-anchor', anchorRight ? 'start' : 'end')
+        .attr('fill', '#2a1020').attr('font-family', "'Jost', sans-serif")
+        .attr('font-size', Math.max(10, W * 0.022)).attr('font-weight', '500')
+        .attr('filter', 'url(#lbl-halo)').text(city.name);
     });
 
     if (ps) {
-      svg.append('circle')
-        .attr('cx', ps[0]).attr('cy', ps[1]).attr('r', 8)
-        .attr('fill', '#B8935A');
-      svg.append('circle')
-        .attr('cx', ps[0]).attr('cy', ps[1]).attr('r', 4)
-        .attr('fill', '#F2E8DC');
-
+      svg.append('circle').attr('cx', ps[0]).attr('cy', ps[1]).attr('r', 8).attr('fill', '#B8935A');
+      svg.append('circle').attr('cx', ps[0]).attr('cy', ps[1]).attr('r', 4).attr('fill', '#F2E8DC');
+      /* Palm Springs label anchors RIGHT of dot so "P" is never clipped */
       svg.append('text')
-        .attr('x', ps[0] - 12)
-        .attr('y', ps[1] - 13)
-        .attr('text-anchor', 'end')
-        .attr('fill', '#B8935A')
+        .attr('x', ps[0] + 12).attr('y', ps[1] - 13)
+        .attr('text-anchor', 'start').attr('fill', '#B8935A')
         .attr('font-family', "'Bodoni Moda', serif")
-        .attr('font-size', Math.max(11, W * 0.026))
-        .attr('font-style', 'italic')
-        .attr('filter', 'url(#lbl-halo)')
-        .text('Palm Springs');
+        .attr('font-size', Math.max(11, W * 0.026)).attr('font-style', 'italic')
+        .attr('filter', 'url(#lbl-halo)').text('Palm Springs');
     }
   });
 }
-
 window.addEventListener('load', buildMap);
 </script>
 </body>
